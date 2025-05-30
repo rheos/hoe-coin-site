@@ -31,25 +31,25 @@ export default function HomePage() {
         </li>
         <li>Search for <strong>$HOE</strong></li>
         <li>Swap SOL for HOE</li>
-        <li>Get to work. You're a holder now.</li>
+        <li>Get to work. You&apos;re a holder now.</li>
       </ol>
 
         <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
-          Contract address will be posted at launch. Don’t get rugged by imposters.
+          Contract address will be posted at launch. Don&apos;t get rugged by imposters.
         </p>
       </div>
 
-      {/* Box 3 — What’s Next */}
+      {/* Box 3 — What&apos;s Next */}
       <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">What’s Next?</h2>
+        <h2 className="text-3xl font-bold mb-4">What&apos;s Next?</h2>
         <p className="text-xl mb-6 leading-relaxed">
-          $HOE isn't just a pump. It's the seed of something weird and maybe even useful.
+          $HOE isn&apos;t just a pump. It&apos;s the seed of something weird and maybe even useful.
         </p>
         <ul className="text-left text-lg space-y-3 max-w-md mx-auto leading-relaxed font-sans font-normal">
           <li>🌱 MemeDAO votes on future grants and chaos</li>
-          <li>🧤 Airdrop contests + “Pimp My HOE” NFTs</li>
+          <li>�� Airdrop contests + "Pimp My HOE" NFTs</li>
           <li>🛒 Merch store: aprons, enamel pins, tilled dreams</li>
-          <li>🌾 There’s more under the soil. You’ll know when it’s time to dig.</li>
+          <li>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</li>
         </ul>
       </div>
       {/* Buttons */}
