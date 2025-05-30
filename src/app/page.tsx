@@ -50,18 +50,25 @@ function AnimatedSection({ children }: { children: ReactNode }) {
   );
 }
 
+
 export default function HomePage() {
   return (
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
       {/* Logo */}
-      <Image
-        src="/assets/hoe-logo.png"
-        alt="$HOE logo"
-        width={300}
-        height={450}
+      <motion.div
+        whileHover={{ rotate: [0, -10, 10, -6, 6, -2, 2, 0] }}
+        transition={{ duration: 0.6 }}
         className="mx-auto mb-12"
-        priority
-      />
+        >
+        <Image
+            src="/assets/hoe-logo.png"
+            alt="$HOE logo"
+            width={300}
+            height={450}
+            priority
+        />
+        </motion.div>
+
 
       <AnimatedSection>
         {/* Box 1 — What is $HOE */}
@@ -169,6 +176,49 @@ export default function HomePage() {
           </ol>
         </div>
       </AnimatedSection>
+
+        {/* Box 6 — Meme Wall */}
+        <AnimatedSection>
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
+            <h2 className="text-3xl font-bold mb-6">Meme Wall</h2>
+            <p className="text-xl leading-relaxed mb-6 italic text-[color:var(--foreground)]/80">
+            Shitposts. Cultivation. Glory.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {['/memes/hoe1.png', '/memes/hoe2.png', '/memes/hoe3.png'].map((src, i) => (
+                <motion.div key={i} whileHover={{ scale: 1.05, rotate: -1 }} transition={{ type: 'spring', stiffness: 150 }}>
+                  <Image
+                    src={src}
+                    alt={`meme-${i}`}
+                    width={400}
+                    height={400}
+                    className="rounded-xl shadow-md border border-[color:var(--accent)]"
+                  />
+                </motion.div>
+            ))}
+            </div>
+        </div>
+        </AnimatedSection>
+
+        {/* Box 7 — CTA */}
+            <AnimatedSection>
+            <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 max-w-xl mx-auto">
+                <h2 className="text-3xl font-bold mb-4">$HOE is calling.</h2>
+                <p className="text-xl mb-6 italic">Plant memes. Reap chaos. Build soil.</p>
+                <a
+                href="https://twitter.com/pimpyourhoe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[color:var(--background)] text-[color:var(--accent)] font-bold px-6 py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-transform"
+                >
+                Follow on X
+                </a>
+            </div>
+            </AnimatedSection>
+
+
+
+
     </main>
   );
 }
