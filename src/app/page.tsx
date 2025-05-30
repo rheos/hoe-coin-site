@@ -47,7 +47,7 @@ export default function HomePage() {
         </p>
         <ul className="text-left text-lg space-y-3 max-w-md mx-auto leading-relaxed font-sans font-normal">
           <li>🌱 MemeDAO votes on future grants and chaos</li>
-          <li>�� Airdrop contests + "Pimp My HOE" NFTs</li>
+          <li>🧤 Airdrop contests + &quot;Pimp My HOE&quot; NFTs</li>
           <li>🛒 Merch store: aprons, enamel pins, tilled dreams</li>
           <li>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</li>
         </ul>
