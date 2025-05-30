@@ -1,21 +1,48 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { ReactNode } from "react";
 
-function AnimatedSection({ children }: { children: React.ReactNode }) {
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+// Animation Variants
+const containerVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+  hidden: {
+    opacity: 0,
+    y: 40,
+    transition: { duration: 0.4, ease: "easeIn" },
+  },
+};
+
+const listVariants = {
+  visible: { transition: { staggerChildren: 0.15 } },
+  hidden: {},
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4 },
+  },
+};
+
+// Section Wrapper
+function AnimatedSection({ children }: { children: ReactNode }) {
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   return (
     <div ref={ref} className="w-full max-w-3xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 40 }}
-        transition={{ duration: 0.6 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
       >
         {children}
       </motion.div>
@@ -24,17 +51,21 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function HomePage() {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: false });
-  }, []);
-
   return (
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
-      <Image src="/assets/hoe-logo.png" alt="$HOE logo" width={300} height={450} className="mx-auto mb-12" priority />
+      {/* Logo */}
+      <Image
+        src="/assets/hoe-logo.png"
+        alt="$HOE logo"
+        width={300}
+        height={450}
+        className="mx-auto mb-12"
+        priority
+      />
 
       <AnimatedSection>
         {/* Box 1 — What is $HOE */}
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-10">
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">$HOE</h1>
           <p className="text-xl text-[color:var(--accent)] italic mb-6">Get to Work.</p>
           <p className="text-2xl leading-relaxed mb-6">
@@ -48,15 +79,25 @@ export default function HomePage() {
 
       <AnimatedSection>
         {/* Box 2 — How to Get $HOE */}
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-10">
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">How to Get $HOE</h2>
           <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6 [&>li::marker]:text-[color:var(--accent)] [&>li::marker]:font-bold">
             <li>
-              Install a Solana wallet like <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Phantom</a>
+              Install a Solana wallet like{" "}
+              <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">
+                Phantom
+              </a>
             </li>
             <li>Buy some SOL</li>
             <li>
-              Go to <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Jupiter</a> or <a href="https://birdeye.so/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Birdeye</a>
+              Go to{" "}
+              <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">
+                Jupiter
+              </a>{" "}
+              or{" "}
+              <a href="https://birdeye.so/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">
+                Birdeye
+              </a>
             </li>
             <li>Search for <strong>$HOE</strong></li>
             <li>Swap SOL for HOE</li>
@@ -70,23 +111,29 @@ export default function HomePage() {
 
       <AnimatedSection>
         {/* Box 3 — What's Next */}
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-12">
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What&apos;s Next?</h2>
           <p className="text-xl mb-6 leading-relaxed">
             $HOE isn&apos;t just a pump. It&apos;s the seed of something weird and maybe even useful.
           </p>
-          <ul className="text-left text-lg space-y-3 max-w-md mx-auto leading-relaxed font-sans font-normal">
-            <li>🌱 MemeDAO votes on future grants and chaos</li>
-            <li>🧤 Airdrop contests + &quot;Pimp My HOE&quot; NFTs</li>
-            <li>🛒 Merch store: aprons, enamel pins, tilled dreams</li>
-            <li>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</li>
-          </ul>
+          <motion.ul
+            className="text-left text-lg space-y-3 max-w-md mx-auto leading-relaxed font-sans font-normal"
+            variants={listVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            <motion.li variants={itemVariants}>🌱 MemeDAO votes on future grants and chaos</motion.li>
+            <motion.li variants={itemVariants}>🧤 Airdrop contests + "Pimp My HOE" NFTs</motion.li>
+            <motion.li variants={itemVariants}>🛒 Merch store: aprons, enamel pins, tilled dreams</motion.li>
+            <motion.li variants={itemVariants}>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</motion.li>
+          </motion.ul>
         </div>
       </AnimatedSection>
 
       <AnimatedSection>
         {/* Box 4 — Tokenomics */}
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-8">
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">Tokenomics</h1>
           <p className="text-xl mb-8">
             Total Supply: <strong className="text-2xl">6,900,000,000 $HOE</strong>
@@ -104,7 +151,7 @@ export default function HomePage() {
 
       <AnimatedSection>
         {/* Box 5 — Roadmap */}
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-8">
+        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
           <h1 className="text-5xl font-bold mb-6 drop-shadow-[2px_2px_0_#1a1a1a]">Roadmap</h1>
           <ol className="list-decimal text-left ml-6 space-y-6 text-xl leading-relaxed font-sans font-normal max-w-prose mx-auto">
             <li>
