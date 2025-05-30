@@ -21,14 +21,19 @@ export default function HomePage() {
       {/* Box 2 — How to Get $HOE */}
       <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-10">
       <h2 className="text-3xl font-bold mb-4">How to Get $HOE</h2>
-        <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6">
-          <li>Install a Solana wallet (like Phantom)</li>
-          <li>Buy some SOL</li>
-          <li>Go to Jupiter or Birdeye</li>
-          <li>Search for <strong>$HOE</strong></li>
-          <li>Swap SOL for HOE</li>
-          <li>Get to work. You're a holder now.</li>
-        </ol>
+      <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6 [&>li::marker]:text-[color:var(--accent)] [&>li::marker]:font-bold">
+        <li>
+          Install a Solana wallet like <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Phantom</a>
+        </li>
+        <li>Buy some SOL</li>
+        <li>
+          Go to <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Jupiter</a> or <a href="https://birdeye.so/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[color:var(--accent)]">Birdeye</a>
+        </li>
+        <li>Search for <strong>$HOE</strong></li>
+        <li>Swap SOL for HOE</li>
+        <li>Get to work. You're a holder now.</li>
+      </ol>
+
         <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
           Contract address will be posted at launch. Don’t get rugged by imposters.
         </p>
@@ -44,10 +49,9 @@ export default function HomePage() {
           <li>🌱 MemeDAO votes on future grants and chaos</li>
           <li>🧤 Airdrop contests + “Pimp My HOE” NFTs</li>
           <li>🛒 Merch store: aprons, enamel pins, tilled dreams</li>
-          <li>🌻 Future bridge into the $BEET or FOAF ecosystem</li>
+          <li>🌾 There’s more under the soil. You’ll know when it’s time to dig.</li>
         </ul>
       </div>
-
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link
