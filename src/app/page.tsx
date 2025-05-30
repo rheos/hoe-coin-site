@@ -124,7 +124,7 @@ export default function HomePage() {
             viewport={{ once: false }}
           >
             <motion.li variants={itemVariants}>🌱 MemeDAO votes on future grants and chaos</motion.li>
-            <motion.li variants={itemVariants}>🧤 Airdrop contests + "Pimp My HOE" NFTs</motion.li>
+            <motion.li variants={itemVariants}>🧤 Airdrop contests + &quot;Pimp My HOE&quot; NFTs</motion.li>
             <motion.li variants={itemVariants}>🛒 Merch store: aprons, enamel pins, tilled dreams</motion.li>
             <motion.li variants={itemVariants}>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</motion.li>
           </motion.ul>
