@@ -1,7 +1,5 @@
-
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -71,7 +69,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        {/* Box 3 — What’s Next */}
+        {/* Box 3 — What's Next */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 max-w-3xl w-full text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What&apos;s Next?</h2>
           <p className="text-xl mb-6 leading-relaxed">
