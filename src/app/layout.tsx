@@ -14,6 +14,26 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: '$HOE — Get to Work',
   description: 'A meme coin for degens with dirt under their fingernails. Stack your HOE. Dig deep.',
+  openGraph: {
+    title: '$HOE — Get to Work',
+    description: 'A meme coin for degens with dirt under their fingernails. Stack your HOE. Dig deep.',
+    url: 'https://pimpyourhoe.com',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pimpyourhoe.com/images/hoe-og-preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: '$HOE — Get to Work',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '$HOE — Get to Work',
+    description: 'A meme coin for degens with dirt under their fingernails. Stack your HOE. Dig deep.',
+    images: ['https://pimpyourhoe.com/images/hoe-og-preview.jpg'],
+  },
 };
 
 export default function RootLayout({
