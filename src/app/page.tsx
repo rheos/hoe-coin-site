@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ReactNode, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
 // Animation Variants
 const containerVariants = {
@@ -61,8 +62,27 @@ export default function HomePage() {
     }
   }, [clicked]);
 
+
+
+
+
+// Only import in browser (Phantom doesn't work server-side)
+const WalletMultiButton = dynamic(
+  async () =>
+    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+  { ssr: false }
+);  
+
+
+
   return (
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
+
+    {/* Wallet button */}
+    <div className="absolute top-6 right-6 z-50">
+        <WalletMultiButton />
+    </div>
+
       {/* Logo */}
       <motion.div
         whileHover={{
@@ -87,8 +107,8 @@ export default function HomePage() {
 
     {/* Box 1 — What is $HOE */}
       <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
-          <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">$HOE</h1>
+        <div className="box-container mb-10">
+          <h1 className="heading-main mb-4">$HOE</h1>
           <p className="text-xl text-[color:var(--accent)] italic mb-6">Get to Work.</p>
           <p className="text-2xl leading-relaxed mb-6">
             $HOE is a meme coin for degenerates with dirt under their fingernails. Planted by Cultivate Labs, it was grown in the compost heap of bear market despair — fertilized by memes, FOMO, and a little bit of hate.
@@ -101,8 +121,8 @@ export default function HomePage() {
 
  {/* Box 2 — How to Get $HOE */}
       <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4">How to Get $HOE</h2>
+        <div className="box-container mb-10">
+          <h2 className="heading-sub">How to Get $HOE</h2>
           <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6 [&>li::marker]:text-[color:var(--accent)] [&>li::marker]:font-bold">
             <li>
               Install a Solana wallet like{" "}
@@ -133,8 +153,8 @@ export default function HomePage() {
 
  {/* Box 3 — What's Next */}
       <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">What&apos;s Next?</h2>
+        <div className="box-container mb-12">
+          <h2 className="heading-sub">What&apos;s Next?</h2>
           <p className="text-xl mb-6 leading-relaxed">
             $HOE isn&apos;t just a pump. It&apos;s the seed of something weird and maybe even useful.
           </p>
@@ -155,8 +175,8 @@ export default function HomePage() {
 
     {/* Box 4 — Tokenomics */}
       <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
-          <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">Tokenomics</h1>
+        <div className="box-container mb-8">
+          <h1 className="heading-main mb-4">Tokenomics</h1>
           <p className="text-xl mb-8">
             Total Supply: <strong className="text-2xl">6,900,000,000 $HOE</strong>
           </p>
@@ -173,8 +193,8 @@ export default function HomePage() {
 
     {/* Box 5 — Roadmap */}
       <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
-          <h1 className="text-5xl font-bold mb-6 drop-shadow-[2px_2px_0_#1a1a1a]">Roadmap</h1>
+        <div className="box-container mb-8">
+          <h1 className="heading-main mb-6">Roadmap</h1>
           <ol className="list-decimal text-left ml-6 space-y-6 text-xl leading-relaxed font-sans font-normal max-w-prose mx-auto">
             <li>
               <strong>Phase 1 — Meme Seeding:</strong> Logo, lore, and hype. Twitter memes, Telegram chaos, and Cultivate Labs launches $HOE into the dirt.
@@ -194,8 +214,8 @@ export default function HomePage() {
 
         {/* Box 6 — Meme Wall */}
         <AnimatedSection>
-        <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
-            <h2 className="text-3xl font-bold mb-6">Meme Wall</h2>
+        <div className="box-container mb-8">
+            <h2 className="heading-sub mb-6">Meme Wall</h2>
             <p className="text-xl leading-relaxed mb-6 italic text-[color:var(--foreground)]/80">
             Shitposts. Cultivation. Glory.
             </p>
@@ -207,7 +227,7 @@ export default function HomePage() {
                     alt={`meme-${i}`}
                     width={400}
                     height={400}
-                    className="rounded-xl shadow-md border border-[color:var(--accent)]"
+                    className="meme-img"
                   />
                 </motion.div>
             ))}
@@ -218,13 +238,13 @@ export default function HomePage() {
         {/* Box 7 — CTA */}
             <AnimatedSection>
             <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 max-w-xl mx-auto">
-                <h2 className="text-3xl font-bold mb-4">$HOE is calling.</h2>
+                <h2 className="heading-sub mb-4">$HOE is calling.</h2>
                 <p className="text-xl mb-6 italic">Plant memes. Reap chaos. Build soil.</p>
                 <a
                 href="https://twitter.com/pimpyourhoe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[color:var(--background)] text-[color:var(--accent)] font-bold px-6 py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-transform"
+                className="btn-cta"
                 >
                 Follow on X
                 </a>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import '@solana/wallet-adapter-react-ui/styles.css';
 
 :root {
   --background: #346a4c;
@@ -27,3 +28,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Custom utility classes for repeated patterns */
+.box-container {
+  @apply bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center;
+}
+.heading-main {
+  @apply text-5xl font-bold drop-shadow-[2px_2px_0_#1a1a1a];
+}
+.heading-sub {
+  @apply text-3xl font-bold mb-4;
+}
+.btn-cta {
+  @apply inline-block bg-[color:var(--background)] text-[color:var(--accent)] font-bold px-6 py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-transform;
+}
+.meme-img {
+  @apply rounded-xl shadow-md border border-[color:var(--accent)];
+}
+.flex-center {
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
+}
+
+/* Override wallet button styles */
+.wallet-adapter-button-trigger {
+  @apply bg-[color:var(--background)] text-[color:var(--accent)] px-5 py-2 rounded-lg font-bold text-lg transition-transform hover:scale-105 shadow-md border border-[color:var(--accent)];
+}
+
