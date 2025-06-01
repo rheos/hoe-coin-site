@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 // Animation Variants
 const containerVariants = {
@@ -52,13 +52,27 @@ function AnimatedSection({ children }: { children: ReactNode }) {
 
 
 export default function HomePage() {
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    if (clicked) {
+      const timeout = setTimeout(() => setClicked(false), 300); // 300ms scale up
+      return () => clearTimeout(timeout);
+    }
+  }, [clicked]);
+
   return (
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
       {/* Logo */}
       <motion.div
-        whileHover={{ rotate: [0, -10, 10, -6, 6, -2, 2, 0] }}
-        transition={{ duration: 0.6 }}
-        className="mx-auto mb-12"
+        whileHover={{
+            rotate: [0, -10, 10, -6, 6, -2, 2, 0],
+            transition: { duration: 0.6, ease: "easeInOut", type: "tween" }
+        }}
+        animate={clicked ? { scale: 1.15, rotate: 3 } : { scale: 1, rotate: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 12 }}
+        className="mx-auto mb-12 cursor-pointer"
+        onClick={() => setClicked(true)}
         >
         <Image
             src="/assets/hoe-logo.png"
@@ -70,8 +84,9 @@ export default function HomePage() {
         </motion.div>
 
 
+
+    {/* Box 1 — What is $HOE */}
       <AnimatedSection>
-        {/* Box 1 — What is $HOE */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">$HOE</h1>
           <p className="text-xl text-[color:var(--accent)] italic mb-6">Get to Work.</p>
@@ -84,8 +99,8 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
+ {/* Box 2 — How to Get $HOE */}
       <AnimatedSection>
-        {/* Box 2 — How to Get $HOE */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">How to Get $HOE</h2>
           <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6 [&>li::marker]:text-[color:var(--accent)] [&>li::marker]:font-bold">
@@ -116,8 +131,8 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
+ {/* Box 3 — What's Next */}
       <AnimatedSection>
-        {/* Box 3 — What's Next */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What&apos;s Next?</h2>
           <p className="text-xl mb-6 leading-relaxed">
@@ -138,8 +153,8 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
+    {/* Box 4 — Tokenomics */}
       <AnimatedSection>
-        {/* Box 4 — Tokenomics */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-[2px_2px_0_#1a1a1a]">Tokenomics</h1>
           <p className="text-xl mb-8">
@@ -156,8 +171,8 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
+    {/* Box 5 — Roadmap */}
       <AnimatedSection>
-        {/* Box 5 — Roadmap */}
         <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl shadow-lg p-10 w-full text-center mb-8">
           <h1 className="text-5xl font-bold mb-6 drop-shadow-[2px_2px_0_#1a1a1a]">Roadmap</h1>
           <ol className="list-decimal text-left ml-6 space-y-6 text-xl leading-relaxed font-sans font-normal max-w-prose mx-auto">
