@@ -79,8 +79,13 @@ const WalletMultiButton = dynamic(
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
 
     {/* Wallet button */}
-    <div className="absolute top-6 right-6 z-50">
-        <WalletMultiButton />
+    <div
+      className="
+        w-full flex justify-end mb-6
+        sm:fixed sm:top-6 sm:right-6 sm:w-auto sm:z-50 sm:p-2 sm:bg-[color:var(--background)] sm:rounded-lg sm:shadow-lg
+      "
+    >
+      <WalletMultiButton />
     </div>
 
       {/* Logo */}
