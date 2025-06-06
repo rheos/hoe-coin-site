@@ -24,7 +24,7 @@ export const metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://pimpyourhoe.com/images/hoe-og-preview.jpg',
+        url: 'https://pimpyourhoe.com/images/hoe-og-preview.png',
         width: 1200,
         height: 630,
         alt: '$HOE — Get to Work',
@@ -37,7 +37,7 @@ export const metadata = {
     creator: '@pimpyourhoe',
     title: '$HOE — Get to Work',
     description: 'A meme coin for degens with dirt under their fingernails. Stack your HOE. Dig deep.',
-    images: ['https://pimpyourhoe.com/images/hoe-og-preview.jpg'],
+    images: ['https://pimpyourhoe.com/images/hoe-og-preview.png'],
   },
   metadataBase: new URL('https://pimpyourhoe.com'),
 };
