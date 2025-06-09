@@ -110,7 +110,7 @@ export default function HomePage() {
             $HOE is a meme coin for degenerates with dirt under their fingernails. Planted by Cultivate Labs, it sprouted from the compost heap of bear market despair — fertilized with memes, FOMO, and a bit of spite. Every trade helps fund real-world efforts to strengthen local food systems.
           </p>
           <p className="text-xl leading-relaxed font-sans font-normal">
-            This isn&rsquo;t just another token. It&rsquo;s a shovel. A signal. A smirk. A filthy, fertile vehicle for attention &mdash; and, if we do it right, for real-world resilience.
+            This isn&apos;t just another token. It&apos;s a shovel. A signal. A smirk. A filthy, fertile vehicle for attention &mdash; and, if we do it right, for real-world resilience.
           </p>
         </div>
       </AnimatedSection>
@@ -144,7 +144,7 @@ export default function HomePage() {
             <li>Get to work. You&apos;re a holder now.</li>
           </ol>
           <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
-            The contract address will be posted at launch. Don&rsquo;t get rugged by imposters. Once liquidity is live, $HOE will be tradable across Raydium, Jupiter, Phantom, and other Solana DEX platforms automatically.
+            The contract address will be posted at launch. Don&apos;t get rugged by imposters. Once liquidity is live, $HOE will be tradable across Raydium, Jupiter, Phantom, and other Solana DEX platforms automatically.
           </p>
         </div>
       </AnimatedSection>
@@ -154,15 +154,15 @@ export default function HomePage() {
         <div className="box-container mb-12">
           <h2 className="heading-sub">More Than Memes</h2>
           <p className="text-xl leading-relaxed mb-6">
-            $HOE isn't just a vibe. Every transaction fuels a grassroots movement focused on food, sovereignty, and survival — because real farmers don't wait for the system to fix itself.
+            $HOE isn&apos;t just a vibe. Every transaction fuels a grassroots movement focused on food, sovereignty, and survival &mdash; because real farmers don&apos;t wait for the system to fix itself.
           </p>
           <p className="text-lg italic text-[color:var(--foreground)]/80">
-            We're planting memes. But something bigger is growing.
+            We&apos;re planting memes. But something bigger is growing.
           </p>
         </div>
       </AnimatedSection>
 
-      {/* Box 4 — What's Next */}
+      {/* Box 4 — What&apos;s Next */}
       <AnimatedSection>
         <div className="box-container mb-12">
           <h2 className="heading-sub">What&apos;s Next?</h2>
@@ -212,7 +212,7 @@ export default function HomePage() {
           <ul className="text-left space-y-3 text-lg font-normal max-w-md mx-auto">
             <li>🪴 NFT plots = bigger yield</li>
             <li>🌾 Seasonal cycles: Cultivate. Harvest. Burn. Repeat.</li>
-            <li>🎁 Earn "Sadie Supporter" NFTs and meme power</li>
+            <li>🎁 Earn &quot;Sadie Supporter&quot; NFTs and meme power</li>
           </ul>
           <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
             Details sprouting soon.
@@ -252,7 +252,7 @@ export default function HomePage() {
             </li>
             <li>
               <p className="font-semibold text-2xl mb-2">Q: Is this real or just laughs?</p>
-              <p>A: Both. The meme&rsquo;s real. The mission is serious. Every trade supports grassroots food system fixes.</p>
+              <p>A: Both. The meme&apos;s real. The mission is serious. Every trade supports grassroots food system fixes.</p>
             </li>
             <li>
               <p className="font-semibold text-2xl mb-2">Q: How can I earn $HOE?</p>
@@ -302,7 +302,7 @@ export default function HomePage() {
         <div className="box-container mb-12">
           <h2 className="heading-sub">The Hoeconomy Keeps Score</h2>
           <p className="text-xl leading-relaxed">
-            We're tracking the top hoes. Those who pay the most fees, spread the most memes, and dig the deepest will earn more than clout.
+            We&apos;re tracking the top hoes. Those who pay the most fees, spread the most memes, and dig the deepest will earn more than clout.
           </p>
           <p className="text-sm italic mt-2 text-[color:var(--foreground)]/70">
             Sadie sees you.
