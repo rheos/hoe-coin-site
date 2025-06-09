@@ -149,7 +149,20 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 3 — What's Next */}
+      {/* Box 3 — More Than Memes */}
+      <AnimatedSection>
+        <div className="box-container mb-12">
+          <h2 className="heading-sub">More Than Memes</h2>
+          <p className="text-xl leading-relaxed mb-6">
+            $HOE isn't just a vibe. Every transaction fuels a grassroots movement focused on food, sovereignty, and survival — because real farmers don't wait for the system to fix itself.
+          </p>
+          <p className="text-lg italic text-[color:var(--foreground)]/80">
+            We're planting memes. But something bigger is growing.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      {/* Box 4 — What's Next */}
       <AnimatedSection>
         <div className="box-container mb-12">
           <h2 className="heading-sub">What&apos;s Next?</h2>
@@ -171,7 +184,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 4 — Tokenomics */}
+      {/* Box 5 — Tokenomics */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h1 className="heading-main mb-4">Tokenomics</h1>
@@ -189,7 +202,25 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 5 — Roadmap */}
+      {/* Box 6 — Farming Preview */}
+      <AnimatedSection>
+        <div className="box-container mb-12">
+          <h2 className="heading-sub">Farming Season Is Coming</h2>
+          <p className="text-xl leading-relaxed mb-4">
+            Stake your $HOE. Tend your plot. Harvest the perks.
+          </p>
+          <ul className="text-left space-y-3 text-lg font-normal max-w-md mx-auto">
+            <li>🪴 NFT plots = bigger yield</li>
+            <li>🌾 Seasonal cycles: Cultivate. Harvest. Burn. Repeat.</li>
+            <li>🎁 Earn "Sadie Supporter" NFTs and meme power</li>
+          </ul>
+          <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
+            Details sprouting soon.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      {/* Box 7 — Roadmap */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h1 className="heading-main mb-6">Roadmap</h1>
@@ -210,7 +241,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 6 — FAQ */}
+      {/* Box 8 — FAQ */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h1 className="heading-main mb-6">FAQ</h1>
@@ -243,7 +274,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 7 — Meme Wall */}
+      {/* Box 9 — Meme Wall */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h2 className="heading-sub mb-6">Meme Wall</h2>
@@ -266,9 +297,22 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      {/* Box 8 — CTA */}
+      {/* Box 10 — Leaderboard Tease */}
       <AnimatedSection>
-        <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 max-w-xl mx-auto">
+        <div className="box-container mb-12">
+          <h2 className="heading-sub">The Hoeconomy Keeps Score</h2>
+          <p className="text-xl leading-relaxed">
+            We're tracking the top hoes. Those who pay the most fees, spread the most memes, and dig the deepest will earn more than clout.
+          </p>
+          <p className="text-sm italic mt-2 text-[color:var(--foreground)]/70">
+            Sadie sees you.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      {/* Box 11 — CTA */}
+      <AnimatedSection>
+        <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 mb-16 max-w-xl mx-auto">
           <h2 className="heading-sub mb-4">$HOE is calling.</h2>
           <p className="text-xl mb-6 italic">Plant memes. Reap chaos. Build soil.</p>
           <a
