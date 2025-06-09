@@ -20,5 +20,5 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Start the development server
-CMD ["npm", "run", "dev"]
+# Start the development server directly
+CMD ["next", "dev"]
