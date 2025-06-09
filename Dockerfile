@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
+# Set PATH to include node_modules/.bin
+ENV PATH /app/node_modules/.bin:$PATH
+
 # Copy package files and install dependencies
 COPY package*.json ./
 COPY .npmrc* ./
