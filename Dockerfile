@@ -2,23 +2,24 @@ FROM node:20
 
 WORKDIR /app
 
-# Install build dependencies (if still needed for native modules)
+# Install optional build tools (safe to keep for native modules)
 RUN apt-get update && apt-get install -y \
     python3 \
     make \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Set PATH to include node_modules/.bin
-ENV PATH /app/node_modules/.bin:$PATH
-
-# Copy package files and install dependencies
+# Copy only package files and install dependencies
 COPY package*.json ./
 COPY .npmrc* ./
 RUN npm install
 
-# Copy the rest of the application
+# Set path for local binaries
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Copy everything else
 COPY . .
 
-# Start the development server directly
-CMD ["next", "dev"]
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
