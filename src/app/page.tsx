@@ -51,6 +51,12 @@ function AnimatedSection({ children }: { children: ReactNode }) {
   );
 }
 
+// Only import in browser (Phantom doesn't work server-side)
+const WalletMultiButton = dynamic(
+  async () =>
+    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+  { ssr: false }
+);
 
 export default function HomePage() {
   const [clicked, setClicked] = useState(false);
@@ -62,31 +68,18 @@ export default function HomePage() {
     }
   }, [clicked]);
 
-
-
-
-
-// Only import in browser (Phantom doesn't work server-side)
-const WalletMultiButton = dynamic(
-  async () =>
-    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  { ssr: false }
-);  
-
-
-
   return (
     <main className="scroll-smooth min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)] px-6 py-12 flex flex-col items-center">
 
-    {/* Wallet button */}
-    <div
-      className="
-        w-full flex justify-end mb-6
-        sm:fixed sm:top-6 sm:right-6 sm:w-auto sm:z-50 sm:p-2 sm:bg-[color:var(--background)] sm:rounded-lg sm:shadow-lg
-      "
-    >
-      <WalletMultiButton />
-    </div>
+      {/* Wallet button */}
+      <div
+        className="
+          w-full flex justify-end mb-6
+          sm:fixed sm:top-6 sm:right-6 sm:w-auto sm:z-50 sm:p-2 sm:bg-[color:var(--background)] sm:rounded-lg sm:shadow-lg
+        "
+      >
+        <WalletMultiButton />
+      </div>
 
       {/* Logo */}
       <motion.div
@@ -98,25 +91,23 @@ const WalletMultiButton = dynamic(
         transition={{ type: "spring", stiffness: 300, damping: 12 }}
         className="mx-auto mb-12 cursor-pointer"
         onClick={() => setClicked(true)}
-        >
+      >
         <Image
-            src="/assets/hoe-logo.png"
-            alt="$HOE logo"
-            width={300}
-            height={450}
-            priority
+          src="/assets/hoe-logo.png"
+          alt="$HOE logo"
+          width={300}
+          height={450}
+          priority
         />
-        </motion.div>
+      </motion.div>
 
-
-
-    {/* Box 1 — What is $HOE */}
+      {/* Box 1 — What is $HOE */}
       <AnimatedSection>
         <div className="box-container mb-10">
           <h1 className="heading-main mb-4">$HOE</h1>
           <p className="text-xl text-[color:var(--accent)] italic mb-6">Get to Work.</p>
           <p className="text-2xl leading-relaxed mb-6">
-            $HOE is a meme coin for degenerates with dirt under their fingernails. Planted by Cultivate Labs, it was grown in the compost heap of bear market despair — fertilized by memes, FOMO, and a little bit of hate.
+            $HOE is a meme coin for degenerates with dirt under their fingernails. Planted by Cultivate Labs, it was grown in the compost heap of bear market despair — fertilized by memes, FOMO, and a little bit of hate. A portion of every trade fuels a real-world initiative focused on local food system resilience.
           </p>
           <p className="text-xl leading-relaxed font-sans font-normal">
             This is not just another token. This is a shovel. A signal. A smirk. A filthy, fertile vehicle for attention — and if we do it right, for real-world resilience.
@@ -124,10 +115,11 @@ const WalletMultiButton = dynamic(
         </div>
       </AnimatedSection>
 
- {/* Box 2 — How to Get $HOE */}
+      {/* Box 2 — How to Get $HOE */}
       <AnimatedSection>
         <div className="box-container mb-10">
           <h2 className="heading-sub">How to Get $HOE</h2>
+          <p className="text-xl mb-4">Launch set for June 21, 2025 on Solana. Stay tuned!</p>
           <ol className="list-decimal text-left space-y-3 text-lg leading-relaxed font-sans font-normal max-w-md mx-auto pl-6 [&>li::marker]:text-[color:var(--accent)] [&>li::marker]:font-bold">
             <li>
               Install a Solana wallet like{" "}
@@ -156,7 +148,7 @@ const WalletMultiButton = dynamic(
         </div>
       </AnimatedSection>
 
- {/* Box 3 — What's Next */}
+      {/* Box 3 — What's Next */}
       <AnimatedSection>
         <div className="box-container mb-12">
           <h2 className="heading-sub">What&apos;s Next?</h2>
@@ -171,14 +163,14 @@ const WalletMultiButton = dynamic(
             viewport={{ once: false }}
           >
             <motion.li variants={itemVariants}>🌱 MemeDAO votes on future grants and chaos</motion.li>
-            <motion.li variants={itemVariants}>🧤 Airdrop contests + &quot;Pimp My HOE&quot; NFTs</motion.li>
+            <motion.li variants={itemVariants}>�� Airdrop contests + &quot;Pimp My HOE&quot; NFTs</motion.li>
             <motion.li variants={itemVariants}>🛒 Merch store: aprons, enamel pins, tilled dreams</motion.li>
             <motion.li variants={itemVariants}>🌾 There&apos;s more under the soil. You&apos;ll know when it&apos;s time to dig.</motion.li>
           </motion.ul>
         </div>
       </AnimatedSection>
 
-    {/* Box 4 — Tokenomics */}
+      {/* Box 4 — Tokenomics */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h1 className="heading-main mb-4">Tokenomics</h1>
@@ -196,7 +188,7 @@ const WalletMultiButton = dynamic(
         </div>
       </AnimatedSection>
 
-    {/* Box 5 — Roadmap */}
+      {/* Box 5 — Roadmap */}
       <AnimatedSection>
         <div className="box-container mb-8">
           <h1 className="heading-main mb-6">Roadmap</h1>
@@ -205,7 +197,7 @@ const WalletMultiButton = dynamic(
               <strong>Phase 1 — Meme Seeding:</strong> Logo, lore, and hype. Twitter memes, Telegram chaos, and Cultivate Labs launches $HOE into the dirt.
             </li>
             <li>
-              <strong>Phase 2 — Token Launch:</strong> Fair launch, Uniswap listing, buy button live. Meme contests and airdrops begin.
+              <strong>Phase 2 — Token Launch:</strong> Fair launch, Raydium listing, buy button live. Meme contests and airdrops begin.
             </li>
             <li>
               <strong>Phase 3 — MemeDAO:</strong> Community votes on memes, grants, and HOE-related experiments. Strange new sprouts begin pushing through the soil.
@@ -217,48 +209,77 @@ const WalletMultiButton = dynamic(
         </div>
       </AnimatedSection>
 
-        {/* Box 6 — Meme Wall */}
-        <AnimatedSection>
+      {/* Box 6 — FAQ */}
+      <AnimatedSection>
         <div className="box-container mb-8">
-            <h2 className="heading-sub mb-6">Meme Wall</h2>
-            <p className="text-xl leading-relaxed mb-6 italic text-[color:var(--foreground)]/80">
-            Shitposts. Cultivation. Glory.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {['/memes/hoe1.png', '/memes/hoe2.png', '/memes/hoe3.png'].map((src, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.05, rotate: -1 }} transition={{ type: 'spring', stiffness: 150 }}>
-                  <Image
-                    src={src}
-                    alt={`meme-${i}`}
-                    width={400}
-                    height={400}
-                    className="meme-img"
-                  />
-                </motion.div>
-            ))}
-            </div>
+          <h1 className="heading-main mb-6">FAQ</h1>
+          <ul className="space-y-8 text-xl leading-relaxed font-sans font-normal text-left mx-auto max-w-prose">
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: What is $HOE?</p>
+              <p>A: A meme coin with a mission: raise funds for local food system resilience while building a community of meme-loving degens and gardeners.</p>
+            </li>
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: Is this real or just laughs?</p>
+              <p>A: Both. The meme&apos;s real, the mission&apos;s serious. Every trade supports grassroots food system fixes.</p>
+            </li>
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: How can I earn $HOE?</p>
+              <p>A: Join contests, meme raids, stake $HOE, or grab a &quot;Sadie Supporter&quot; NFT for early engagement.</p>
+            </li>
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: Is there an airdrop?</p>
+              <p>A: Yep, community-based. Early meme action and engagement get rewarded—no VC bags here.</p>
+            </li>
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: Will it go to $0?</p>
+              <p>A: Maybe, but not before we plant a ton of memes and grow something real.</p>
+            </li>
+            <li>
+              <p className="font-semibold text-2xl mb-2">Q: What&apos;s the deal with the name?</p>
+              <p>A: It&apos;s a nod to the tools we use to grow food, and a wink at the crypto space&apos;s love of wordplay.</p>
+            </li>
+          </ul>
         </div>
-        </AnimatedSection>
+      </AnimatedSection>
 
-        {/* Box 7 — CTA */}
-            <AnimatedSection>
-            <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 max-w-xl mx-auto">
-                <h2 className="heading-sub mb-4">$HOE is calling.</h2>
-                <p className="text-xl mb-6 italic">Plant memes. Reap chaos. Build soil.</p>
-                <a
-                href="https://twitter.com/pimpyourhoe"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cta"
-                >
-                Follow on X
-                </a>
-            </div>
-            </AnimatedSection>
+      {/* Box 7 — Meme Wall */}
+      <AnimatedSection>
+        <div className="box-container mb-8">
+          <h2 className="heading-sub mb-6">Meme Wall</h2>
+          <p className="text-xl leading-relaxed mb-6 italic text-[color:var(--foreground)]/80">
+            Shitposts. Cultivation. Glory.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {['/memes/hoe1.png', '/memes/hoe2.png', '/memes/hoe3.png'].map((src, i) => (
+              <motion.div key={i} whileHover={{ scale: 1.05, rotate: -1 }} transition={{ type: 'spring', stiffness: 150 }}>
+                <Image
+                  src={src}
+                  alt={`meme-${i}`}
+                  width={400}
+                  height={400}
+                  className="meme-img"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
 
-
-
-
+      {/* Box 8 — CTA */}
+      <AnimatedSection>
+        <div className="bg-[color:var(--accent)] text-[color:var(--background)] rounded-xl shadow-xl p-8 w-full text-center mt-12 max-w-xl mx-auto">
+          <h2 className="heading-sub mb-4">$HOE is calling.</h2>
+          <p className="text-xl mb-6 italic">Plant memes. Reap chaos. Build soil.</p>
+          <a
+            href="https://twitter.com/pimpyourhoe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta"
+          >
+            Follow on X
+          </a>
+        </div>
+      </AnimatedSection>
     </main>
   );
 }
