@@ -8,7 +8,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   experimental: {
-    serverActions: true,
+    serverActions: {},
   },
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname, "src");

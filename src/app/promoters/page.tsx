@@ -3,11 +3,42 @@ import Link from "next/link";
 import AnimatedSection from "@components/AnimatedSection";
 import Logo from "@components/Logo";
 
+export const metadata = {
+    title: "Promote $HOE — Earn by Growing the Movement",
+    description: "No upfront deals. We reward real reach and genuine impact. If you're serious about helping $HOE grow, here's how we work.",
+    openGraph: {
+      title: "Promote $HOE",
+      description: "Earn $HOE by actually moving the needle. No upfronts. Just real rewards for real work.",
+      url: "https://pimpyourhoe.com/promoters",
+      siteName: "$HOE",
+      images: [
+        {
+          url: "https://pimpyourhoe.com/og-promoters.png", // Replace with actual hosted image
+          width: 1200,
+          height: 630,
+          alt: "Promote $HOE",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Promote $HOE",
+      description: "Get rewarded for real engagement. No bots. No fluff.",
+      images: ["https://pimpyourhoe.com/og-promoters.png"], // Replace with actual image
+    },
+  };
+
+  
+
 export default function PromotersPage() {
   return (
     <>
       <div className="w-full flex justify-center">
-        <Logo />
+        <Link href="/" target="_blank" rel="noopener noreferrer">
+          <Logo />
+        </Link>
       </div>
 
       {/* Intro */}

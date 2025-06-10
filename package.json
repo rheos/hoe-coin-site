@@ -30,7 +30,8 @@
     "eslint-config-next": "15.3.2",
     "pino-pretty": "^10.0.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@vercel/analytics": "^1.2.0"
   },
   "resolutions": {
     "uuidv4": "npm:uuid@^9.0.1",
