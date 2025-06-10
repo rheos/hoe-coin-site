@@ -64,7 +64,7 @@ export default function PromotersPage() {
             <li>🧑‍🌾 <strong>Community impact</strong>: referrals, viral memes, retention</li>
             <li>⚠️ <strong>Low-effort content</strong> may be denied or reduced</li>
           </ul>
-          <h2 className="heading-sub text-center">⏳ Vesting & Early Dumper Clause</h2>
+          <h2 className="heading-sub text-center">⏳ Vesting &amp; Early Dumper Clause</h2>
           <div className="max-w-prose mx-auto text-left mt-4 mb-8">
             <p className="text-lg leading-relaxed mb-4">
               Promoters receiving over 500,000 $HOE will have their tokens <strong>vested</strong> over 3&ndash;6 months, with a short cliff &mdash; meaning nothing is unlocked immediately, and the first portion only becomes available after a brief initial delay.
@@ -74,7 +74,7 @@ export default function PromotersPage() {
             </p>
           </div>
 
-          <h2 className="heading-sub">🧪 Tracking & Verification</h2>
+          <h2 className="heading-sub">🧪 Tracking &amp; Verification</h2>
           <ul className="list-disc list-inside space-y-1 text-left text-lg mb-8">
             <li>X API for engagement (retweets, quotes, impressions)</li>
             <li>Custom Telegram invite links</li>
@@ -82,7 +82,7 @@ export default function PromotersPage() {
             <li>DEX volume analysis tied to post windows</li>
           </ul>
 
-          <h2 className="heading-sub">🤝 Let's Talk</h2>
+          <h2 className="heading-sub">🤝 Let&apos;s Talk</h2>
           <p className="text-lg leading-relaxed">
             Think you&apos;ve got what it takes to promote $HOE with impact? DM us on X{' '}
             <Link className="underline text-blue-400" href="https://x.com/pimpyourhoe">@pimpyourhoe</Link>{' '}
@@ -90,7 +90,7 @@ export default function PromotersPage() {
             <Link className="underline text-blue-400" href="https://t.me/officialhoe">@officialhoe</Link>.
           </p>
           <p className="mt-4 text-sm italic text-[color:var(--foreground)]/70">
-            We'll evaluate based on <strong>real results</strong>, not just follower counts.
+            We&apos;ll evaluate based on <strong>real results</strong>, not just follower counts.
           </p>
         </div>
       </AnimatedSection>
