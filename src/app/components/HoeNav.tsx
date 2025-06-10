@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const navItems = [
   { label: "🌱", title: "Intro", href: "#intro" },
