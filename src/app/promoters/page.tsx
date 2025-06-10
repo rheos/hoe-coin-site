@@ -22,37 +22,37 @@ export default function PromotersPage() {
           <h2 className="heading-sub">💰 Base Reward Structure</h2>
           <div className="grid grid-cols-1 gap-6 mb-12">
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">Retweet (with impact)</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">Retweet (with impact)</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">25,000 $HOE &mdash; Must stay live, relevant to campaign</p>
             </div>
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">Quote Tweet</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">Quote Tweet</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">50,000 $HOE &mdash; Add personal take, meme, or support call</p>
             </div>
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">Custom Meme Post</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">Custom Meme Post</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">50,000&ndash;100,000 $HOE &mdash; Original content only, meme quality matters</p>
             </div>
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">Campaign Thread</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">Campaign Thread</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">150,000 $HOE+ &mdash; At least 3 tweets, pinned or boosted</p>
             </div>
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">Telegram Blast</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">Telegram Blast</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">50,000&ndash;150,000 $HOE &mdash; Must reach a real active group (not botted)</p>
             </div>
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">YouTube/TikTok/Shorts</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">YouTube/TikTok/Shorts</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">100,000&ndash;300,000 $HOE &mdash; Engagement-based bonus possible</p>
             </div>
             {/*
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">X Space Co-Host</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">X Space Co-Host</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">150,000&ndash;500,000 $HOE &mdash; Depends on reach and retention</p>
             </div>
             */}
             <div className="bg-[color:var(--background)] border border-[color:var(--accent)] rounded-xl py-4 px-6 sm:py-6 sm:px-8 mb-4">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[color:var(--accent)] mb-2 text-center">CEX/Influencer Referral</p>
+              <p className="text-xl sm:text-2xl font-bold text-[color:var(--accent)] mb-2 text-center">CEX/Influencer Referral</p>
               <p className="text-lg sm:text-xl text-[color:var(--foreground)] mt-2 text-center">500,000+ $HOE &mdash; Handled case-by-case with vesting</p>
             </div>
           </div>
