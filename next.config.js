@@ -1,9 +1,20 @@
+const path = require("path");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: "standalone",
   images: {
     unoptimized: true,
   },
-}
+  reactStrictMode: true,
+  experimental: {
+    serverActions: true,
+  },
+  webpack: (config) => {
+    config.resolve.alias["@"] = path.resolve(__dirname, "src");
+    config.resolve.alias["@components"] = path.resolve(__dirname, "src/app/components");
+    return config;
+  },
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig;
