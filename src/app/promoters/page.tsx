@@ -13,7 +13,7 @@ export const metadata = {
       siteName: "$HOE",
       images: [
         {
-          url: "https://pimpyourhoe.com/hoe-og-promoter.png", // Replace with actual hosted image
+          url: "https://pimpyourhoe.com/images/hoe-og-promoter.png", // Replace with actual hosted image
           width: 1200,
           height: 630,
           alt: "Promote $HOE",
@@ -26,7 +26,7 @@ export const metadata = {
       card: "summary_large_image",
       title: "Promote $HOE",
       description: "Get rewarded for real engagement. No bots. No fluff.",
-      images: ["https://pimpyourhoe.com/hoe-og-promoter.png"], // Replace with actual image
+      images: ["https://pimpyourhoe.com/images/hoe-og-promoter.png"], // Replace with actual image
     },
   };
 
